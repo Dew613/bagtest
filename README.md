@@ -6,8 +6,11 @@ This repository contains scripts to automate the creation of fake visitors for t
 
 ### Clone the Repository
 ```bash
-git clone <repository-url>
-cd <repository-directory>
+git clone https://github.com/Dew613/bagtest
+```
+### Navigate to the Repository
+```bash
+cd bagtest
 ```
 
 ### Install Packages
@@ -16,13 +19,23 @@ npm install
 ```
 
 ### Running the Tests
-To run the `visitor.spec.js` file:
+I recommend running the tests in UI mode first if there is a need for debugging:
 ```bash
-npx playwright test visitor.spec.js
+npx playwright test --ui
+```
+
+To run the `visitor.spec.js` file directly:
+```bash
+npx playwright test tests/visitor.spec.js
 ```
 
 ### Creating a New Visitor
-To create a new visitor, edit the `const` variable in the `visitor.spec.js` file.
+To create a new visitor, edit the `const num` variable in the `tests/visitor.spec.js` file. This variable is used to generate unique visitor details.
+
+```javascript
+// filepath: /Users/dewansunnah/Desktop/bagtest/tests/visitor.spec.js
+const num = 21; // Change this number to create a new visitor
+```
 
 ### Running in UI Mode
 Playwright provides a UI mode to help with debugging:
